@@ -1,0 +1,27 @@
+
+
+<div class=" container mt-5">  
+  <div class="p-3 mb-2 bg-info text-white"> Listado de Voluntarios Registrados </div>
+  
+    <body *ngFor="let item of  voluntarios; let i = index">
+        <div class="card float-left" style="width: 18rem;">
+            <img class="card-img-top" src="../../../assets/14.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Nombre:{{item.nombres}}</h5>
+              <p class="card-text">{{ item.descripcion}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Apellidos: {{item.apellidos}}</li>
+              <li class="list-group-item">Dirección: {{item.direccion}}</li>
+              <li class="list-group-item">Género: {{ item.sexo}}</li>
+            </ul>
+            <div class="card-body">
+                <button [routerLink]="['/voluntario', item.idvoluntario]" class="btn btn-sm btn-info" ><fa-icon [icon]="faEye"></fa-icon></button>                    
+                <button [routerLink]="['/formV', item.idvoluntario]" class="btn btn-sm btn-warning" ><fa-icon [icon]="faPencilAlt"></fa-icon></button>
+                <button (click)="delete(item)" class="btn btn-sm btn-danger" ><fa-icon [icon]="faTrash"></fa-icon></button>
+            </div>
+        </div>
+    </body>
+</div><br><br><br>
+
+

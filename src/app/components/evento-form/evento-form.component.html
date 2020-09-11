@@ -1,0 +1,49 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="user">
+    <div class=" container mt-5">
+        <h1 class="text-secondary" align="center">{{title}}</h1>
+        <div class=" container mt-5">
+            <span class="d-block p-2 bg-dark text-white font-weight-bolder">Datos Evento</span>
+            <div class=" container mt-5">
+                <form [formGroup]="form" (ngSubmit)="onSubmit()" class="user">
+                    <div class="input-group mb-3">
+                        <input formControlName="nombre" [(ngModel)]=" evento.nombre" type="text" class="form-control" placeholder="Nombre Evento">
+                        <div class="input-group-append">
+                            <label class="input-group-text" for="inputGroupSelect02">Evento</label>
+                        </div>
+                    </div><br>
+                    <div class="form-row">
+                        <div class="col">
+                          <input formControlName="fecha_inicio" [(ngModel)]=" evento.fecha_inicio" type="date" class="form-control" placeholder="Tema">
+                        </div>
+                        <div class="col">
+                          <input formControlName="fecha_final" [(ngModel)]=" evento.fecha_final" type="date" class="form-control" placeholder="Fecha">
+                        </div><br>
+                    </div><br>
+                    <div class="input-group mb-3">
+                        <input formControlName="organizador" [(ngModel)]=" evento.organizador" type="text" class="form-control" placeholder="Nombre Organizador">
+                        <div class="input-group-append">
+                            <label class="input-group-text" for="inputGroupSelect02">Organizador</label>
+                        </div>
+                    </div><br>
+                    <div class="input-group mb-3">
+                        <select class="custom-select" formControlName="idcategoria" [(ngModel)]="evento.idcategoria">        
+                                <option *ngFor="let item of categorias" [value]="item.idcategoria">{{item.nombre}}</option>
+                        </select><br>
+                        <div class="input-group-append">
+                          <label class="input-group-text" for="inputGroupSelect02">Categoría</label>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            
+        </div>
+    </div>
+
+
+
+    <div class=" container mt-5">
+        <button type="submit" class="btn btn btn-outline-primary btn-lg btn-block">Aplicar</button>
+      </div>
+
+</form><br><br><br><br><br>

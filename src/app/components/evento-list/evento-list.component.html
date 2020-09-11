@@ -1,0 +1,21 @@
+
+<div class=" container mt-5"> 
+    <div class="p-3 mb-2 bg-dark text-white"> Listado de Eventos </div>
+    <body *ngFor="let item of  eventos; let i = index">
+        <div class="card float-left" style="width: 18rem;">
+            <img class="card-img-top" src="../../../assets/13.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Nombre del Evento:{{item.nombre}}</h5>
+              <p class="card-text">Organizador:{{ item.organizador}}</p>
+            </div>
+            <div class="card-body">
+                <button [routerLink]="['/evento', item.idevento]" class="btn btn-sm btn-info" ><fa-icon [icon]="faEye"></fa-icon></button>                    
+                <button [routerLink]="['/formE', item.idevento]" class="btn btn-sm btn-warning" ><fa-icon [icon]="faPencilAlt"></fa-icon></button>
+                <button (click)="delete(item)" class="btn btn-sm btn-danger" ><fa-icon [icon]="faTrash"></fa-icon></button>
+            </div>
+        </div>
+    </body>
+</div><br><br><br>
+
+
+
